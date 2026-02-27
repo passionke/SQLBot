@@ -381,7 +381,7 @@
             <span style="width: calc(48% - 2px)">{{ t('variables.variables') }}</span>
             <span>{{ t('variables.variable_value') }}</span>
           </div>
-          <div v-for="(_, index) in state.form.system_variables" class="item">
+          <div v-for="(_, index) in state.form.system_variables" :key="index" class="item">
             <el-select
               v-model="state.form.system_variables[index].variableId"
               style="width: 236px"
@@ -548,6 +548,7 @@ import { request } from '@/utils/request'
 import { workspaceList } from '@/api/workspace'
 import { variablesApi } from '@/api/variables'
 import { formatTimestamp } from '@/utils/date'
+import { ElButton } from 'element-plus'
 import { ClickOutside as vClickOutside } from 'element-plus-secondary'
 import icon_warning_filled from '@/assets/svg/icon_warning_filled.svg'
 import { useClipboard } from '@vueuse/core'
@@ -555,7 +556,7 @@ import { useClipboard } from '@vueuse/core'
 const { copy } = useClipboard({ legacy: true })
 
 const { t } = useI18n()
-const defaultPwd = ref('SQLBot@123456')
+const defaultPwd = ref('admin')
 const keyword = ref('')
 const dialogFormVisible = ref(false)
 const termFormRef = ref()

@@ -51,7 +51,7 @@ def upgrade():
                 "id": 1,
                 "account": "admin",
                 "name": "Administrator",
-                "password": "8f32d1e371702c1b1b7346f4b07a701d",
+                "password": "21232f297a57a5a743894a0e4a801fc3",
                 "email": "fit2cloud.com",
                 "oid": 1,
                 "status": 1,
